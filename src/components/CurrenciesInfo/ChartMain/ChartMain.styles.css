@@ -1,0 +1,5 @@
+.chart-container__chart {
+    width: 100%;
+    height: calc(100% - 21px);
+    background-color: cadetblue;
+}

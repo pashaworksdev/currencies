@@ -1,0 +1,1 @@
+export * from './CurrenciesPickerTable.component.js';

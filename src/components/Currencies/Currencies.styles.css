@@ -1,0 +1,5 @@
+.main__currencies {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: grey;
+}

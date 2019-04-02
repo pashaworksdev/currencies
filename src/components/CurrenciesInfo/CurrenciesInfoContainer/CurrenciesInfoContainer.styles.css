@@ -1,0 +1,6 @@
+.currencies__currencies-information {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: darkcyan;
+}

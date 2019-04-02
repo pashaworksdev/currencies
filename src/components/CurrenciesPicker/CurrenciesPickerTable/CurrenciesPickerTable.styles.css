@@ -1,0 +1,41 @@
+.currencies-picker__table {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: calc(100% - 63px);
+    border: 2px solid darkgrey;
+    border-radius: 10px;
+}
+
+.table__headline {
+    display: flex;
+    flex-shrink: 0;
+    padding: 10px;
+    border-bottom: 2px solid darkgrey;
+}
+
+.headline__name {
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.headline__name--sign {
+    width: 15%;
+}
+
+.headline__name--abbreviation {
+    width: 20%;
+}
+
+.headline__name--rate {
+    width: 25%;
+}
+
+.headline__name--difference {
+    width: 40%;
+}
+
+.table__list {
+    overflow-y: auto;
+}

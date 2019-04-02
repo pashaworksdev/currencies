@@ -1,0 +1,1 @@
+export * from './Currencies.component.js';

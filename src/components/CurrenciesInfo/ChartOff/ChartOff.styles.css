@@ -1,0 +1,8 @@
+.currencies-information__chart-not-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 146px);
+    background-color: cadetblue;
+}
