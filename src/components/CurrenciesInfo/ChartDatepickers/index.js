@@ -1,1 +1,1 @@
-export * from './ChartDatepickers.component.js';
+export * from './ChartDatepickers.container.js';

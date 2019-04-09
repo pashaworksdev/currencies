@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './ChartOff.styles.css';
 
 export const ChartOff = () => (

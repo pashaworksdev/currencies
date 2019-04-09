@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './About.styles.css';
 
 export const About = () => (

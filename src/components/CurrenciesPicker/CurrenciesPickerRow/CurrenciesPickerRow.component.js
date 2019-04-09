@@ -1,5 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+
 import {roundNumber} from '../../../services/mathCalculations.js';
 import './CurrenciesPickerRow.styles.css';
 
@@ -15,7 +16,7 @@ export const CurrenciesPickerRow = (props) => {
     const difference = roundNumber(currency.Difference);
 
     const arrayAbbreviation = ['usd', 'eur', 'jpy', 'cny', 'rub', 'try', 'gbp'];
-    const classAbbreviation = arrayAbbreviation.indexOf(abbreviation.toLowerCase()) === -1 ? 'money' : abbreviation;
+    const classAbbreviation = arrayAbbreviation.includes(abbreviation.toLowerCase()) ? abbreviation : 'money';
 
     return (
         <div

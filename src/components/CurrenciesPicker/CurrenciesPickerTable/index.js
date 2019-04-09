@@ -1,1 +1,1 @@
-export * from './CurrenciesPickerTable.component.js';
+export * from './CurrenciesPickerTable.container.js';

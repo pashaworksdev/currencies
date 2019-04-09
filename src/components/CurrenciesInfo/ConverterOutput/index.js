@@ -1,1 +1,1 @@
-export * from './ConverterOutput.component.js';
+export * from './ConverterOutput.container.js';

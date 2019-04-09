@@ -1,10 +1,12 @@
 import React from 'react';
+
 import './CurrenciesPickerSearch.styles.css';
 
 export const CurrenciesPickerSearch = (props) => {
 
-    const handleCurrencyInputChange = (event) =>
+    const handleCurrencyInputChange = (event) => {
         props.onCurrencyInputChange(event.target.value);
+    };
 
     return (
         <form className="currencies-picker__form">

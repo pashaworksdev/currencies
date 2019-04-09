@@ -1,1 +1,1 @@
-export * from './ChartContainer.component.js';
+export * from './ChartContainer.container.js';
