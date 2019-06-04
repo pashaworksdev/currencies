@@ -1,0 +1,28 @@
+@import "../../../styles/items.styles.scss";
+
+.converter__converter-input {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding-bottom: 20px;
+    @media(max-width: 550px) {
+        width: 100%;
+    }
+}
+
+.converter-input__value {
+    box-sizing: border-box;
+    width: 25%;
+    border: 2px solid darkgrey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+.converter-input__field {
+    @extend %input;
+    width: 45%;
+}
+

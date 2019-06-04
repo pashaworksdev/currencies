@@ -1,0 +1,16 @@
+@import "../../../styles/variables.styles.scss";
+
+.main__currencies-picker {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 35%;
+  height: 100%;
+  padding: 20px;
+
+  @media(max-width: $smallDisplay) {
+    height: 30%;
+    min-height: 200px;
+    width: 100%;
+  }
+}

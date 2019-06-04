@@ -1,0 +1,19 @@
+@import "../../../styles/variables.styles.scss";
+
+.current-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 640px;
+}
+
+.current-page__main {
+  display: flex;
+  flex: 1 1;
+
+  background-color: grey;
+
+  @media(max-width: $smallDisplay) {
+    flex-direction: column;
+  }
+}

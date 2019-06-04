@@ -1,0 +1,10 @@
+@import "../../../styles/items.styles.scss";
+
+.currencies-picker__form {
+    padding-bottom: 20px;
+}
+
+.currencies-picker__search {
+    @extend %input;
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+@import "./variables.styles.scss";
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+html {
+  @media(max-width: $smallDisplay) {
+    font-size: 0.8em;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: cadetblue;
+}

@@ -1,40 +1,41 @@
-import {createStore, applyMiddleware} from 'redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import moment from 'moment';
 
 import rootReducer from '../reducers';
+import { initLocalStorage } from '../services/usingLocalStorage.js';
 
-const startDate = new Date();
-startDate.setDate(startDate.getDate() - 30);
-const endDate = new Date();
+const startDate = moment().add(-10, 'days').toDate();
+const endDate = moment().toDate();
+
+const storageOfFavoriteCurrencies = initLocalStorage();
 
 const initialState = {
-    chooseCurrency: {
-        currencyInput: '',
-        currencySelected: {}
+    common: {
+        storageOfCurrencies: [],
+        storageOfFavoriteCurrencies,
+        enteredCurrency: '',
+        selectedCurrency: {},
+        startDate,
+        endDate,
+        changesCurrencyForPeriod: [],
     },
-    getCurrencies: {
-        currenciesBase: [],
-        currencyForPeriod: [],
+    converter: {
+        amountOfConvertibleCurrency: '',
+        abbreviationOfConvertibleCurrency: '',
     },
-    getPeriodDate: {
-        startDate: startDate,
-        endDate: endDate
+    favorite: {
+        selectedFavoriteCurrency: {},
     },
-    convertCurrency: {
-        amountCurrency: '',
-        abbreviationCurrency: ''
-    }
 };
 
-export function configureStore() {
-
+export default function configureStore() {
     return createStore(
         rootReducer,
         initialState,
         composeWithDevTools(
-            applyMiddleware(thunk)
-        )
+            applyMiddleware(thunk),
+        ),
     );
-
 }

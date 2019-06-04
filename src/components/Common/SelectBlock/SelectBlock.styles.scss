@@ -1,0 +1,48 @@
+@import "../../../styles/variables.styles.scss";
+
+%currency-not-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkcyan;
+}
+
+.main__currency-not-selected {
+  @extend %currency-not-selected;
+  width: 65%;
+
+  @media(max-width: $smallDisplay) {
+    height: 70%;
+    width: 100%;
+  }
+}
+
+.favorite__currency-not-selected {
+  @extend %currency-not-selected;
+  flex: 1 1;
+  width: 100%;
+}
+
+%currencies-information {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: darkcyan;
+}
+
+.main__currencies-information {
+  @extend %currencies-information;
+  width: 65%;
+
+  @media(max-width: $smallDisplay) {
+    height: 70%;
+    width: 100%;
+  }
+}
+
+.favorite__currencies-information {
+  @extend %currencies-information;
+  flex: 1 1;
+  width: 100%;
+}

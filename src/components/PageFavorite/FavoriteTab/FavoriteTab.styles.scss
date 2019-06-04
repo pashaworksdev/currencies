@@ -1,0 +1,27 @@
+.favorite-tab {
+  margin-right: 3px;
+}
+
+.favorite-tab__abbreviation {
+  padding: 10px;
+  background: cadetblue;
+  cursor: pointer;
+
+  &:hover {
+    background: lightblue;
+  }
+}
+
+.favorite-tab__abbreviation--selected {
+  background: darkcyan;
+}
+
+.favorite-tab__remove {
+  text-align: center;
+  background: red;
+  cursor: pointer;
+
+  &:hover {
+    background: indianred;
+  }
+}

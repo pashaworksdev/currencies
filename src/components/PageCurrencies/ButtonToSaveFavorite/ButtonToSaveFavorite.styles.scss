@@ -1,0 +1,12 @@
+.favorite-button {
+  border: 2px solid darkgrey;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: aqua;
+
+  & :hover {
+    background: lightblue;
+  }
+}

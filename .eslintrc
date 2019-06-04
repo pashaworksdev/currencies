@@ -1,14 +1,78 @@
 {
-//  "extends": [
-//    "airbnb",
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
 //    "plugin:import/errors",
 //    "plugin:import/warnings",
 //    "plugin:react/recommended",
 //    "plugin:jsx-a11y/recommended"
-//  ],
-  "parser": "babel-eslint"
-//  "plugins": [
-//    "react",
-//    "jsx-a11y"
-//  ]
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "process": true,
+    "localStorage": true,
+    "fetch": true
+  },
+  "plugins": [
+    "import",
+    "react",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+
+    "linebreak-style": ["error", "unix"],
+    "arrow-body-style": [2, "as-needed"],
+    "no-trailing-spaces": "off",
+    "implicit-arrow-linebreak": "off",
+    "padded-blocks": ["error", { "classes": "always" }],
+
+    "class-methods-use-this": "off",
+    "no-restricted-syntax": "off",
+    "no-plusplus": "off",
+    "no-nested-ternary": "warn",
+    "consistent-return": "off",
+    "spaced-comment": ["warn", "always", {"markers": ["#region"], "exceptions": ["#endregion"]}],
+    "arrow-parens": ["warn", "as-needed"],
+//    "no-console": ["error", {"allow": ["warn", "error", "debug"]}],
+    "no-console": "off",
+
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/sort-comp": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-did-mount-set-state": "off",
+    "react/forbid-prop-types": "off",
+    "react/self-closing-comp": "warn",
+    "react/no-array-index-key": "warn",
+    "react/destructuring-assignment": "off",
+
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+
+    "import/extensions": "off",
+    "import/prefer-default-export": "warn",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+
+    "array-callback-return": "off",
+    "react/no-unescaped-entities": "off",
+    "react/button-has-type": "off",
+    "no-param-reassign": "off",
+    "max-len": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": "off",
+    "no-prototype-builtins": "off"
+  }
+//  "settings": {
+//    "import/resolver": {"webpack": {"config": "./config/webpack.prod.babel.js"}}
+//  }
 }

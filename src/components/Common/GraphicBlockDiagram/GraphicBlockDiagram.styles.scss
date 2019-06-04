@@ -1,0 +1,10 @@
+.chart-container__chart {
+  flex: 1 1;
+  max-height: calc(100% - 41px);
+  box-sizing: border-box;
+  padding: 20px 15px 15px 15px;
+  background-color: cadetblue;
+  @media(max-width: 566px) {
+      height: calc(100% - 56px);
+  }
+}

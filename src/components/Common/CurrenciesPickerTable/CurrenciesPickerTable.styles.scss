@@ -1,0 +1,71 @@
+@import "../../../styles/variables.styles.scss";
+
+.currencies-picker__table {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+    border: 2px solid darkgrey;
+    border-radius: 10px;
+    @media (max-width: $smallDisplay) {
+        flex-direction: row;
+    }
+}
+
+.table__headline {
+    display: flex;
+    padding: 10px 18px 10px 10px;
+    border-bottom: 2px solid darkgrey;
+    @media (max-width: $smallDisplay) {
+        flex-direction: column;
+        padding: 10px 10px 18px 10px;
+        border-right: 2px solid darkgrey;
+        border-bottom: none;
+    }
+}
+
+.table__list {
+    max-height: 100%;
+    overflow-y: auto;
+    box-shadow: inset -4px 0 20px 6px black;
+    @media (max-width: $smallDisplay) {
+        display: flex;
+    }
+}
+
+.headline__name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    @media (max-width: $smallDisplay) {
+        height: 25%;
+    }
+}
+
+.headline__name--sign {
+    width: 20%;
+    @media (max-width: $smallDisplay) {
+        width: 100%;
+    }
+}
+
+.headline__name--abbreviation {
+    width: 20%;
+    @media (max-width: $smallDisplay) {
+        width: 100%;
+    }
+}
+
+.headline__name--rate {
+    width: 25%;
+    @media (max-width: $smallDisplay) {
+        width: 100%;
+    }
+}
+
+.headline__name--difference {
+    width: 35%;
+    @media (max-width: $smallDisplay) {
+        width: 100%;
+    }
+}

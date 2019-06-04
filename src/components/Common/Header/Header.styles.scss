@@ -1,0 +1,42 @@
+@import "../../../styles/variables.styles.scss";
+
+.current-page__header {
+  display: flex;
+  min-height: 85px;
+
+  background-color: aquamarine;
+}
+
+.header__logo {
+  width: 35%;
+  margin: auto;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  @media(max-width: $smallDisplay) {
+    width: 50%;
+  }
+}
+
+.header__navigation {
+  display: flex;
+  width: 65%;
+  align-items: center;
+  justify-content: center;
+  @media(max-width: $smallDisplay) {
+    flex-direction: column;
+    width: 50%;
+  }
+}
+
+.navigation__link {
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.navigation__amount-favorite {
+  padding-left: 10px;
+  float: right;
+  color: red;
+}

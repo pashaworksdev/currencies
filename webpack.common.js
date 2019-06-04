@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        curriencies: './src/index.js',
+        app: './src/index.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -17,11 +17,11 @@ module.exports = {
             template: './src/index.html',
         }),
         new ExtractTextPlugin({
-            filename: 'bundle.css',
+            filename: '[name].bundle.css',
             disable: false,
             allChunks: true,
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ],
     module: {
         rules: [
@@ -33,17 +33,37 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: [/node_modules/],
-                use: ['babel-loader'],
+                exclude: /node_modules/,
+                use: 'babel-loader',
             },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader',
+                    use: ['css-loader', 'postcss-loader'],
                     publicPath: '/dist',
                 }),
             },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'sass-loader'],
+                    publicPath: '/dist',
+                }),
+            },
+            // {
+            //     test: /\.(png|jpe?g|gif)$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: '/[path][name].[ext]',
+            //                 outputPath: 'images',
+            //             },
+            //         },
+            //     ],
+            // },
         ],
     },
 };

@@ -1,0 +1,12 @@
+.current-page__favorite {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    padding: 30px;
+    background-color: grey;
+}
+
+.favorite__favorite-tabs {
+    display: flex;
+    overflow-x: auto;
+}

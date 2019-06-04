@@ -1,74 +1,69 @@
 import axios from 'axios';
+import moment from 'moment';
 
 class GettingCurrencies {
+
+    correctCurrency(currency) {
+        const format = {
+            Cur_ID: 'id',
+            Cur_Abbreviation: 'abbreviation',
+            Cur_Scale: 'scale',
+            Cur_Name: 'name',
+            Cur_OfficialRate: 'rate',
+            Date: 'date',
+        };
+
+        const changedItems = Object.keys(currency).map(key => {
+            const newKey = format[key] || key;
+            return { [newKey]: currency[key] };
+        });
+        return changedItems.reduce((previousValue, currentValue) =>
+            Object.assign({}, previousValue, currentValue));
+    }
 
     requestCurrencies(url) {
         return axios.get(url)
             .then(result => result.data)
-            .catch((error) => console.log(`Error in request${error}`))
+            .catch(error => console.log(`Error in request${error}`));
     }
 
-    getUrlCurrenciesForDate(year, month, date) {
-        let url = `http://www.nbrb.by/API/ExRates/Rates?onDate=${year}-${month + 1}-${date}&Periodicity=0`;
+    getUrlStorageOfCurrencies(year, month, date) {
+        const url = `http://www.nbrb.by/API/ExRates/Rates?onDate=${year}-${month + 1}-${date}&Periodicity=0`;
         return this.requestCurrencies(url);
     }
 
-    getCurrenciesForDate() {
-        let today = new Date();
-        let currenciesToday = this.getUrlCurrenciesForDate(today.getFullYear(), today.getMonth(), today.getDate());
+    getStorageOfCurrencies() {
+        const today = moment();
+        const currenciesToday = this.getUrlStorageOfCurrencies(today.year(), today.month(), today.date());
 
-        let yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        let currenciesYesterday = this.getUrlCurrenciesForDate(yesterday.getFullYear(), yesterday.getMonth(), yesterday.getDate());
+        const yesterday = moment().add(-1, 'days');
+        const currenciesYesterday = this.getUrlStorageOfCurrencies(yesterday.year(), yesterday.month(), yesterday.date());
 
         return Promise.all([currenciesToday, currenciesYesterday])
             .then(([resultToday, resultYesterday]) => {
-                let correctionResultToday = resultToday.map((item) => this.correctionObject(item));
-                let correctionResultYesterday = resultYesterday.map((item) => this.correctionObject(item));
+                const correctionResultToday = resultToday.map(currency => this.correctCurrency(currency));
+                const correctionResultYesterday = resultYesterday.map(currency => this.correctCurrency(currency));
 
-                return correctionResultToday.map((item, index) => {
-                    item.Difference = item.Rate - correctionResultYesterday[index].Rate;
-                    return item;
+                return correctionResultToday.map((currency, index) => {
+                    currency.difference = currency.rate - correctionResultYesterday[index].rate;
+                    return currency;
                 });
             });
     }
 
-    getUrlCurrencyForPeriod(id, startDate, endDate) {
-        startDate = startDate.toISOString();
-        endDate = endDate.toISOString();
-
-        let url = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${id}?startDate=${startDate}&endDate=${endDate}`;
+    getUrlChangesCurrencyForPeriod(id, startDate, endDate) {
+        const url = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${id}?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`;
         return this.requestCurrencies(url);
     }
 
-    getCurrencyForPeriod(id, startDate, endDate) {
-        let Promise = this.getUrlCurrencyForPeriod(id, startDate, endDate);
-
+    getChangesCurrencyForPeriod(id, startDate, endDate) {
+        const Promise = this.getUrlChangesCurrencyForPeriod(id, startDate, endDate);
         return Promise
-            .then(result => {
-                return result.map((item) => this.correctionObject(item));
-            });
-    }
-
-    correctionObject(item) {
-        let format = {
-            Cur_ID: "Id",
-            Cur_Abbreviation: "Abbreviation",
-            Cur_Scale: "Scale",
-            Cur_Name: "Name",
-            Cur_OfficialRate: "Rate"
-        };
-
-        for (let key in item) {
-            if (format[key]) {
-                let newKey = format[key];
-                item[newKey] = item[key];
-                delete item[key];
-            }
-        }
-        return item;
+            .then(result => result.map(currency => this.correctCurrency(currency)));
     }
 
 }
 
-export const gettingCurrencies = new GettingCurrencies();
+const gettingCurrencies = new GettingCurrencies();
+
+export default gettingCurrencies;

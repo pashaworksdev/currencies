@@ -1,0 +1,68 @@
+@import "../../../styles/variables.styles.scss";
+
+.list__row {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  @media (max-width: $smallDisplay) {
+    flex-direction: column;
+  }
+
+  &:hover {
+    background: lightblue;
+  }
+}
+
+.list__row--selected {
+  background: white;
+}
+
+.row__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: $smallDisplay) {
+    height: 25%;
+  }
+}
+
+.row__value--sign {
+  width: 20%;
+  @media (max-width: $smallDisplay) {
+    width: 100%;
+  }
+}
+
+.row__value--abbreviation {
+  width: 20%;
+  @media (max-width: $smallDisplay) {
+    width: 100%;
+  }
+}
+
+.row__value--rate {
+  width: 25%;
+  @media (max-width: $smallDisplay) {
+    width: 100%;
+  }
+}
+
+.row__value--difference {
+  box-sizing: border-box;
+  width: 35%;
+  padding: 5px 0;
+  border: 2px solid white;
+  border-radius: 5px;
+  @media (max-width: $smallDisplay) {
+    padding: 0 10px;
+    width: 100%;
+  }
+}
+
+.row__value--red {
+  background-color: red;
+}
+
+.row__value--green {
+  background-color: green;
+}

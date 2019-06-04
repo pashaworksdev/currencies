@@ -1,0 +1,8 @@
+.current-page__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1;
+    background-color: darkcyan;
+}

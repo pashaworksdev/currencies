@@ -1,0 +1,36 @@
+@import "../../../styles/items.styles.scss";
+
+.converter__converter-output {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    @media(max-width: 550px) {
+        width: 100%;
+    }
+}
+
+.converter-output__value {
+    box-sizing: border-box;
+    width: 25%;
+    border: 2px solid darkgrey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+.converter-output__field {
+    @extend %input;
+    width: 45%;
+}
+
+.converter-output__select {
+    box-sizing: border-box;
+    width: 25%;
+    border: 2px solid darkgrey;
+    border-radius: 10px;
+    text-align-last:center;
+    background-color: lightblue;
+    cursor: pointer;
+}
