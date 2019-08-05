@@ -12,35 +12,36 @@ const Header = props => {
     return (
         <header className="header current-page__header">
             <div className="header__logo">
-                Project Currencies
+                {'Project Currencies'}
             </div>
             <nav className="navigation header__navigation">
                 <NavLink
                     className="navigation__link"
                     to="/"
                 >
-                    Currencies
+                    {'Currencies'}
                 </NavLink>
                 <NavLink
                     className="navigation__link"
                     to="/converter"
                 >
-                    Converter
+                    {'Converter'}
                 </NavLink>
                 <NavLink
                     className="navigation__link"
                     to="/about"
                 >
-                    About
+                    {'About'}
                 </NavLink>
                 <NavLink
                     className="navigation__link"
                     to="/favorite"
                 >
-                    Favorite
-                    <div className="navigation__amount-favorite">
+                    {'Favorite'}
+                    <span className="navigation__amount-favorite">
+                        {' '}
                         {amountOfFavoriteCurrencies}
-                    </div>
+                    </span>
                 </NavLink>
             </nav>
         </header>

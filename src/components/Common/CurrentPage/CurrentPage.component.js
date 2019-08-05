@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from '../Header';
 import CurrenciesPicker from '../CurrenciesPicker';
-import SelectBlockDefault, { SelectBlockFavorite } from '../SelectBlock';
+import SelectBlock from '../SelectBlock';
 import ButtonToSaveFavorite from '../../PageCurrencies/ButtonToSaveFavorite';
 import GraphicBlockDefault, { GraphicBlockFavorite } from '../GraphicBlock';
 import Converter from '../../PageConverter/Converter';
@@ -24,10 +24,10 @@ const CurrentPage = () => (
                 render={() => (
                     <div className="main current-page__main">
                         <CurrenciesPicker />
-                        <SelectBlockDefault additionalClassName="main">
+                        <SelectBlock additionalClassName="main">
                             <ButtonToSaveFavorite />
                             <GraphicBlockDefault />
-                        </SelectBlockDefault>
+                        </SelectBlock>
                     </div>
                 )}
             />
@@ -36,10 +36,10 @@ const CurrentPage = () => (
                 render={() => (
                     <div className="main current-page__main">
                         <CurrenciesPicker />
-                        <SelectBlockDefault additionalClassName="main">
+                        <SelectBlock additionalClassName="main">
                             <Converter />
                             <GraphicBlockDefault />
-                        </SelectBlockDefault>
+                        </SelectBlock>
                     </div>
                 )}
             />
@@ -48,10 +48,10 @@ const CurrentPage = () => (
                 path="/favorite"
                 render={() => (
                     <FavoriteBlock>
-                        <SelectBlockFavorite additionalClassName="favorite">
+                        <SelectBlock additionalClassName="favorite">
                             <FavoriteInformation />
                             <GraphicBlockFavorite />
-                        </SelectBlockFavorite>
+                        </SelectBlock>
                     </FavoriteBlock>
                 )}
             />

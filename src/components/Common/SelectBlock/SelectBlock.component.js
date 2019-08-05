@@ -13,12 +13,12 @@ const SelectBlock = props => {
     return Object.keys(selectedCurrency).length === 0
         ? (
             <div className={`currency-not-selected ${additionalClassName}__currency-not-selected`}>
-            'Select currency'
+                { 'Select currency' }
             </div>
         )
         : (
             <div className={`currencies-information ${additionalClassName}__currencies-information`}>
-                {children}
+                { children }
             </div>
         );
 

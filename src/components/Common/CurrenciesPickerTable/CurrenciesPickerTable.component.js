@@ -35,16 +35,16 @@ class CurrenciesPickerTable extends Component {
             <div className="table currencies-picker__table">
                 <div className="headline table__headline">
                     <div className="headline__name headline__name--sign">
-                        Sign
+                        { 'Sign' }
                     </div>
                     <div className="headline__name headline__name--abbreviation">
-                        Abbr.
+                        { 'Abbr.' }
                     </div>
                     <div className="headline__name headline__name--rate">
-                        Rate
+                        { 'Rate' }
                     </div>
                     <div className="headline__name headline__name--difference">
-                        Difference
+                        { 'Difference' }
                     </div>
                 </div>
                 <div className="list table__list">

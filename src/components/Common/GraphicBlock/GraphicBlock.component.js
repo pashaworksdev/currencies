@@ -26,24 +26,16 @@ class GraphicBlock extends Component {
         this.props.setEndDate(endDate);
 
     render() {
-        if (this.props.location.pathname !== '/converter') {
-            return (
-                <div className="chart-container currencies-information__chart-container">
+        return (
+            <div className="chart-container currencies-information__chart-container">
+                {this.props.location.pathname !== '/converter' && (
                     <GraphicBlockDatePickers
                         startDate={this.props.startDate}
                         endDate={this.props.endDate}
                         changeStartDate={this.changeStartDate}
                         changeEndDate={this.changeEndDate}
                     />
-                    <GraphicBlockDiagram
-                        changesCurrencyForPeriod={this.props.changesCurrencyForPeriod}
-                        selectedCurrency={this.props.selectedCurrency}
-                    />
-                </div>
-            );
-        }
-        return (
-            <div className="chart-container currencies-information__chart-container">
+                )}
                 <GraphicBlockDiagram
                     changesCurrencyForPeriod={this.props.changesCurrencyForPeriod}
                     selectedCurrency={this.props.selectedCurrency}

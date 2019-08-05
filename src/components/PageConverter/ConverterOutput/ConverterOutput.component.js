@@ -10,7 +10,7 @@ const ConverterOutput = props => {
     return (
         <form className="converter-output converter__converter-output">
             <label className="converter-output__value">
-                Destination
+                { 'Destination' }
             </label>
             <input
                 className="converter-output__field"

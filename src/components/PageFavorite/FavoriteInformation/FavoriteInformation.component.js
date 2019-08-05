@@ -13,24 +13,20 @@ const FavoriteInformation = props => {
     return (
         <div className="text-information currencies-information__text-information">
             <div className="text-information__field">
-                Currency Name:
-                {' '}
-                {selectedFavoriteCurrency.name}
+                { 'Currency Name: '}
+                { selectedFavoriteCurrency.name }
             </div>
             <div className="text-information__field">
-                Currency Abbreviation:
-                {' '}
-                {selectedFavoriteCurrency.abbreviation}
+                { 'Currency Abbreviation: '}
+                { selectedFavoriteCurrency.abbreviation }
             </div>
             <div className="text-information__field">
-                Start date:
-                {' '}
-                {startDate.toDateString()}
+                { 'Start date: '}
+                { startDate.toDateString() }
             </div>
             <div className="text-information__field">
-                End date:
-                {' '}
-                {endDate.toDateString()}
+                { 'End date: '}
+                { endDate.toDateString() }
             </div>
         </div>
     );

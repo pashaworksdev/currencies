@@ -14,8 +14,7 @@ const ButtonToSaveFavorite = props => {
             onClick={addFavoriteCurrency}
         >
             <FontAwesome name="plus-circle" />
-            {' '}
-            To favorite!
+            { ' To favorite!' }
         </button>
     );
 

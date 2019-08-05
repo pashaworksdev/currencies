@@ -16,7 +16,7 @@ const GraphicBlockDatePickers = props => {
     return (
         <div className="datepicker chart-container__datepicker">
             <div className="datepicker__name">
-                Start date:
+                { 'Start date:' }
                 <DatePicker
                     selected={props.startDate}
                     onChange={changeStartDate}
@@ -25,7 +25,7 @@ const GraphicBlockDatePickers = props => {
                 />
             </div>
             <div className="datepicker__name">
-                End date:
+                { 'End date:' }
                 <DatePicker
                     selected={props.endDate}
                     onChange={changeEndDate}

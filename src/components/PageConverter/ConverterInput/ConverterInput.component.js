@@ -13,7 +13,7 @@ const ConverterInput = props => {
                 className="converter-input__value"
                 htmlFor="converter-input__field"
             >
-                Value
+                { 'Value' }
             </label>
             <input
                 className="converter-input__field"
